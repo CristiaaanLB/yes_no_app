@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/widgets/chat/her_messages_bubble.dart';
 import 'package:yes_no_app/presentation/widgets/chat/my_messages_bubble.dart';
+import 'package:yes_no_app/presentation/widgets/shared/messages_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({ super.key });
@@ -36,11 +38,12 @@ class _ChatView extends StatelessWidget {
           Expanded(child: ListView.builder(
             itemCount: 100,
             itemBuilder: (context, index){
-              return const MyMessageBubble();
+              return ( index % 2 == 0)
+              ? const HerMessagesBubble()
+              : const MyMessageBubble();
             }
           )),
-          Text('texto del SafeArea')
-          //Text('texto del safearea')
+          const MessagesFieldBox(),
         ]
         )
       ),

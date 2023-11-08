@@ -6,22 +6,54 @@ class HerMessagesBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Colors.grey,
-            //color: Colors.red,
+            color: Colors.black,
+            //color: Colors.pink,
             borderRadius: BorderRadius.circular(20),
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text('Aliquip qui magna velit dolor do reprehenderit irure esse.', style: TextStyle(color: Colors.white),),
-            //child: Text('Voluptate fugiat esse velit adipisicing sunt aute dolor id exercitation cupidatat incididunt ipsum.', style: TextStyle(color: Colors.white),),
+            child: Text('Hola soy Batman.', style: TextStyle(color: Colors.white),),
+            //child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', style: TextStyle(color: Colors.white),),
           ),
         ),
-        const SizedBox(height: 10,)
+        const SizedBox(height: 10,),
+        _ImageBubble(),
+        const SizedBox(height: 10,),
       ],
     );
+  }
+}
+
+class _ImageBubble extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    //Almacenamos las dimensiones del dispositivo en size
+    final size = MediaQuery.of(context).size;
+
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.network(
+          'https://yesno.wtf/assets/yes/15-3d723ea13af91839a671d4791fc53dcc.gif',
+          width: size.width * 0.5,
+          height: (size.width * 0.5) / 2,
+          fit: BoxFit.fill,
+
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+
+            return Container(
+              width: size.width * 0.5,
+              height: (size.width * 0.5) / 2,
+              padding: const EdgeInsets.symmetric( horizontal: 10, vertical: 5),
+              child: const Text('Batman está enviando una imagen'),
+            );
+          }
+          )
+      );
   }
 }
