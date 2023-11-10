@@ -3,6 +3,29 @@ import 'package:flutter/material.dart';
 class HerMessagesBubble extends StatelessWidget {
   const HerMessagesBubble({super.key});
 
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Container(
+//           decoration: BoxDecoration(
+//             color: Colors.black,
+//             borderRadius: BorderRadius.circular(20),
+//           ),
+//           child: const Padding(
+//             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+//             child: Text('Hola soy Batman.', style: TextStyle(color: Colors.white),),
+//           ),
+//         ),
+//         const SizedBox(height: 10,),
+//         _ImageBubble(),
+//         const SizedBox(height: 10,),
+//       ],
+//     );
+//   }
+// }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -10,14 +33,12 @@ class HerMessagesBubble extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Colors.black,
-            //color: Colors.pink,
+            color: Colors.pink,
             borderRadius: BorderRadius.circular(20),
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text('Hola soy Batman.', style: TextStyle(color: Colors.white),),
-            //child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', style: TextStyle(color: Colors.white),),
           ),
         ),
         const SizedBox(height: 10,),
